@@ -1,0 +1,28 @@
+# Define the User type
+type User {
+  id: ID!
+  name: String!
+  email: String!
+}
+
+# Input type for creating a user
+input CreateUserInput {
+  name: String!
+  email: String!
+}
+
+# Define the queries
+type Query {
+  getUser(id: ID!): User
+}
+
+# Define the mutations
+type Mutation {
+  createUser(input: CreateUserInput!): User
+}
+
+# Define the schema with query and mutation
+schema {
+  query: Query
+  mutation: Mutation
+}
